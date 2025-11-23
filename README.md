@@ -1,5 +1,42 @@
+# DevStack & PackStack
 
-## 1) DevStack Installation Guide (Ubuntu 20.04 / 22.04)
+## 1) DevStack vs PackStack — Quick Comparison
+
+| Feature | **DevStack** | **PackStack** |
+|--------|--------------|--------------|
+| Goal | Developer-focused OpenStack environment | Easy OpenStack PoC on RHEL-based systems |
+| Best For | Learning internals, modifying services | Quick training/lab clouds |
+| Source | Builds from git source code | Installs RPM packages |
+| Environment | Short-lived, easy to reset | Semi-persistent test setup |
+| Customization | Very high | Moderate |
+| Automation method | Bash scripts | Puppet |
+| Setup Time | Fast to rebuild | Slower initial install |
+| Production Use | No | Still not recommended |
+| Recommended Use Case | Experimentation and debugging | Operation practice, PoC deployments |
+
+**TL;DR**  
+- **DevStack →** Great for learning how OpenStack works under the hood.  
+- **PackStack →** Ideal for a small, quick demo cloud on CentOS/RHEL-style systems.
+
+---
+
+## 2) When to Choose What
+
+### Use **DevStack** if you want to:
+- Inspect/modify OpenStack components
+- Frequently reset the environment
+- Practice development and debugging
+- Spin test clouds quickly
+
+### Use **PackStack** if you:
+- Have a CentOS/RHEL-like system
+- Need a functional PoC cloud
+- Focus on operations, not code changes
+- Want a guided installation path
+
+---
+
+## 3) DevStack Installation Guide (Ubuntu 20.04 / 22.04)
 
 > DevStack creates a full OpenStack dev environment for testing and learning.
 
@@ -76,7 +113,6 @@ Save and exit.
 This step may take a while.
 
 ---
-<img width="1943" height="874" alt="image" src="https://github.com/user-attachments/assets/952fd8e7-9d0f-4a90-bb1f-442bf91db0af" />
 
 ### Step 6 — Access Horizon Dashboard
 
@@ -129,7 +165,7 @@ Clean environment:
 
 ---
 
-## 2) PackStack Quick Note (for reference)
+## 4) PackStack Quick Note (for reference)
 
 > PackStack works on RHEL/CentOS-like systems and installs OpenStack using RPMs + Puppet.
 
